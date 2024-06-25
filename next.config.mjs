@@ -2,7 +2,14 @@
 const nextConfig = {
   // add iamge host to next/image
   images: {
-    domains: ["media.propertyloop.co.uk"],
+    remotePatterns: [
+      {
+        hostname: "media.propertyloop.co.uk",
+        protocol: "https",
+        pathname: "**",
+        port: "",
+      },
+    ],
   },
   experimental: {
     serverComponentsExternalPackages: ["sharp", "onnxruntime-node"],
